@@ -1,0 +1,13 @@
+devschool_admin:
+    resource: "@DevschoolAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+devschool_film:
+    resource: "@DevschoolFilmBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

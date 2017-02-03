@@ -1,0 +1,15 @@
+{% extends 'DevschoolFilmBundle::layout.html.twig' %}
+
+
+{% block title %}{{ film.titre }}{% endblock %}
+
+{% block body %}
+
+<span>{{ film.categorie }}</span>
+
+<p>{{ film.description }}</p>
+
+<span>Date de parution : {{ film.dateParution|date("m/d/Y") }}</span>
+
+<p><a href="{{ path('page_films') }}">Retour</a></p>
+{% endblock %}
