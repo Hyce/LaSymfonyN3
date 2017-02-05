@@ -5,11 +5,38 @@
 
 {% block body %}
 
-<span>{{ film.categorie }}</span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <p class="lead">Cinéma</p>
+                <div class="list-group">
+                    <a href="{{ path('page_films') }}" class="list-group-item">Films</a>
+                    <a href="{{ path('admin_realisateur_liste') }}" class="list-group-item">Réalisateurs</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <ul class="liste">
+                    <div class="thumbnail">
 
-<p>{{ film.description }}</p>
+                        <h4 class="pull-right">{{ film.categorie }}</h4>
+                        <h3>{{ film.titre }}</h3>
 
-<span>Date de parution : {{ film.dateParution|date("m/d/Y") }}</span>
 
-<p><a href="{{ path('page_films') }}">Retour</a></p>
+                        <p>{{ film.description }}</p>
+                        <hr/>
+                        <div class="ratings">
+                            <p class="pull-right">Sorti le {{ film.dateParution|date("m/d/Y") }}</p>
+                            <p>Réalisé par <a href="{{ path('admin_realisateur_liste') }}">{{ film.realisateur.nom }}</a></p>
+                        </div>
+                    </div>
+                </ul>
+
+            </div>
+        </div>
+        <a href="{{ path('page_films') }}">
+            <button type="button" class="btn btn-default pull-right">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true">Retour</span>
+            </button>
+        </a>
+    </div>
 {% endblock %}

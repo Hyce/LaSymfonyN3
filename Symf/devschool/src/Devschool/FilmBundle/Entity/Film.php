@@ -56,6 +56,22 @@ class Film
      */
     private $realisateur;
 
+    /**
+     * @return mixed
+     */
+    public function getRealisateur()
+    {
+        return $this->realisateur;
+    }
+
+    /**
+     * @param mixed $realisateur
+     */
+    public function setRealisateur($realisateur)
+    {
+        $this->realisateur = $realisateur;
+    }
+
 
     /**
      * Get id

@@ -1,3 +1,10 @@
-{{ form_start(form) }}
-{{ form_widget(form) }}
-{{ form_end(form) }}
+{% extends 'DevschoolAdminBundle::layout.html.twig' %}
+
+    {% block body %}
+        <div class="container">
+            <h3>Ajouter un réalisateur</h3>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+    {% endblock %}

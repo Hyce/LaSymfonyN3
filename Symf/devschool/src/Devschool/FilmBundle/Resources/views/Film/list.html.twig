@@ -1,16 +1,26 @@
-
 {% extends 'DevschoolFilmBundle::layout.html.twig' %}
 
 {% block title %}Liste des Films{% endblock %}
 
 {% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+                <p class="lead">Cinéma</p>
+                <div class="list-group">
+                    <a href="{{ path('page_films') }}" class="list-group-item">Films</a>
+                    <a href="{{ path('admin_realisateur_liste') }}" class="list-group-item">Réalisateurs</a>
+                </div>
+        </div>
+        <div class="col-md-9">
+                {% for film in films %}
+                <div class="thumbnail">
+                        <h3><a href="{{ path('page_livre',  {'id': film.id}) }}">{{ film.titre }}</a></h3>
+                    <p>Réalisé par  <a href="{{ path('admin_realisateur_liste') }}">{{ film.realisateur.nom }} </a></p>
+                </div>
+                {% endfor %}
 
-<ul class="liste">
-    {% for film in films %}
-        <li>
-            <h2><a href="{{ path('page_livre',  {'id': film.id}) }}">{{ film.titre }}</a></h2>
-        </li>
-    {% endfor %}
-</ul>
-
+        </div>
+    </div>
+</div>
 {% endblock %}

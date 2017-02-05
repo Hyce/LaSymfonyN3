@@ -33,6 +33,27 @@ class Realisateur
      */
     private $films;
 
+    /**
+     * @return mixed
+     */
+    public function getFilms()
+    {
+        return $this->films;
+    }
+
+    /**
+     * @param mixed $films
+     */
+    public function setFilms($films)
+    {
+        $this->films = $films;
+    }
+
+    public function __toString() {
+        return $this->nom;
+    }
+
+
 
     /**
      * Get id
